@@ -209,7 +209,6 @@
 		6C59BE9DE8A74DFAABFE2BE128E06930 /* FKFlickrPrefsGetHidden.h in Headers */ = {isa = PBXBuildFile; fileRef = EA553A1CDFC60DE12FC5D9BEA7BB3B61 /* FKFlickrPrefsGetHidden.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6C6E09C32BB7D346883933E1DF01E658 /* FKFlickrPhotosCommentsAddComment.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3D42996224F359E5D4A7A98B5F96A3 /* FKFlickrPhotosCommentsAddComment.m */; };
 		6E1ABAE80F4BF0007A07A6E480C5D176 /* FKFlickrStatsGetCollectionDomains.m in Sources */ = {isa = PBXBuildFile; fileRef = E5153949EAC506011C030FF7664E1343 /* FKFlickrStatsGetCollectionDomains.m */; };
-		6EF0C2C9C128E6D7A81C2EECAC97E408 /* Pods-JodelChallenge-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0E05A0015789483DC1129990D93B42 /* Pods-JodelChallenge-dummy.m */; };
 		6F136CC880B354E8F63200C7A5DA0785 /* FKFlickrNetworkOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE4F8C1A87EA4AAD0C5993905CFDED2 /* FKFlickrNetworkOperation.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6F4E61365538190C7BBA5CF69BBF9CE2 /* FKFlickrPlacesFindByLatLon.h in Headers */ = {isa = PBXBuildFile; fileRef = 45E447055E3EC1929D9EA1423947A24F /* FKFlickrPlacesFindByLatLon.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6F8DAAD9998AFE3B07EA4279A8CCC778 /* FKFlickrUrlsLookupGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8FDF019CA818930A656AF5A96B34E /* FKFlickrUrlsLookupGroup.m */; };
@@ -245,6 +244,7 @@
 		7E075F98D9CA914DFA61C457BDEFDCF3 /* FKFlickrGroupsPoolsRemove.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DD7EEE59DC73CCD9272AC560B0C03C5 /* FKFlickrGroupsPoolsRemove.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7E3C504CC40D66E8CBAA6995D2D5F4E4 /* FKFlickrPhotosSuggestionsRejectSuggestion.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CC751D13DB041438A026FA9DCD1D150 /* FKFlickrPhotosSuggestionsRejectSuggestion.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7E9C7D98F08207CF54B52C0403FDABF5 /* FKUploadRespone.m in Sources */ = {isa = PBXBuildFile; fileRef = A69FF5B493D3021F7FA5F00A5BCC76EF /* FKUploadRespone.m */; };
+		7F97CCA19340D7DC6CCE31DA5D50AE34 /* Pods-JodelChallenge-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0E05A0015789483DC1129990D93B42 /* Pods-JodelChallenge-dummy.m */; };
 		7FE9B040343D4F5E29414A8457ACF871 /* FKFlickrUrlsLookupGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3A22705A0624304FD10819B8CF43D /* FKFlickrUrlsLookupGroup.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		808045934BD787D30992F1EC57864E54 /* FKFlickrAuthGetToken.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5C12457383ED2543602EA5DB15A9FD /* FKFlickrAuthGetToken.m */; };
 		80B0F2068124294AF64767B1BB3E6E45 /* FKFlickrPeopleGetPublicGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = B3FEDBC08CA1E8F0AA342F83007A31A8 /* FKFlickrPeopleGetPublicGroups.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -459,7 +459,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FE3D35142A8192CE2F12340306CCCE5C /* PBXContainerItemProxy */ = {
+		06264D85350B9D0820FD03782539959F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -931,14 +931,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3CF4F880E63C4755DF23C6CB9C5400E3 /* Frameworks */ = {
+		2DD0BC7631998C1B955D03F469E13AF7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFF713F705BD460F343B4AD9A4F31723 /* Frameworks */ = {
+		3CF4F880E63C4755DF23C6CB9C5400E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1707,7 +1707,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8AF4B61285C5BFAF3CFD3F43EE17517 /* Headers */ = {
+		1A19A8530084264568E654040C49ED9D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1736,16 +1736,16 @@
 		};
 		B9F9EED40AF574D05549D56800E9A673 /* Pods-JodelChallenge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A8AD5A3D57D2D3C08ED3AB5AB1F0CF3B /* Build configuration list for PBXNativeTarget "Pods-JodelChallenge" */;
+			buildConfigurationList = 47CF49AD88D370BCA37244889E8E1473 /* Build configuration list for PBXNativeTarget "Pods-JodelChallenge" */;
 			buildPhases = (
-				D8AF4B61285C5BFAF3CFD3F43EE17517 /* Headers */,
-				BAFFAA037531C3C11AF6C7D57E9A0395 /* Sources */,
-				CFF713F705BD460F343B4AD9A4F31723 /* Frameworks */,
+				1A19A8530084264568E654040C49ED9D /* Headers */,
+				D63EECBA2B4A00C95E0CF4AF7BDDA642 /* Sources */,
+				2DD0BC7631998C1B955D03F469E13AF7 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E7FB3144C9DE64CC8ABF8314B6253EC0 /* PBXTargetDependency */,
+				9765FEFA9B94FA6830D3322C2A8F9930 /* PBXTargetDependency */,
 			);
 			name = "Pods-JodelChallenge";
 			productName = "Pods-JodelChallenge";
@@ -2011,30 +2011,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BAFFAA037531C3C11AF6C7D57E9A0395 /* Sources */ = {
+		D63EECBA2B4A00C95E0CF4AF7BDDA642 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EF0C2C9C128E6D7A81C2EECAC97E408 /* Pods-JodelChallenge-dummy.m in Sources */,
+				7F97CCA19340D7DC6CCE31DA5D50AE34 /* Pods-JodelChallenge-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E7FB3144C9DE64CC8ABF8314B6253EC0 /* PBXTargetDependency */ = {
+		9765FEFA9B94FA6830D3322C2A8F9930 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FlickrKit;
 			target = 71DFA51014004C2320F37DB1C6751641 /* FlickrKit */;
-			targetProxy = FE3D35142A8192CE2F12340306CCCE5C /* PBXContainerItemProxy */;
+			targetProxy = 06264D85350B9D0820FD03782539959F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
+		0082FC00BCCBFCAA63AA5C98EA587C17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2057,6 +2058,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2082,7 +2084,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2095,17 +2097,17 @@
 			};
 			name = Debug;
 		};
-		29C06B1BE263BA1B6DA42C9CE2F5CD3E /* Release */ = {
+		52A441198509780564DFC34EE08B4B23 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F136A3BDBF6E9F3BA91E37028FEE354 /* Pods-JodelChallenge.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -2118,41 +2120,17 @@
 			};
 			name = Release;
 		};
-		500DFFE74C21B3286600581EAC74E7C4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF08FC1C5A26F3A0F9D8600E5A65929E /* FlickrKit.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/FlickrKit/FlickrKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = FlickrKit;
-				PRODUCT_NAME = FlickrKit;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		72239EB3B87F89159CF6905BCC7D6084 /* Debug */ = {
+		C71E3D3229C01307C8A0C96D4B888772 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F00DCB82F2A0E6545F37A7D0C318FF1A /* Pods-JodelChallenge.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -2164,11 +2142,11 @@
 			};
 			name = Debug;
 		};
-		9483BCF07B50F5CF8553D7F6B523D637 /* Release */ = {
+		E20F5F94004DBC718124E0C194858191 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D6231CCBA2C52BCA82CD1C77DB1F2AB6 /* FlickrKit.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2189,10 +2167,11 @@
 			};
 			name = Release;
 		};
-		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
+		E5B12AB88A4F6C443C963D290ECB2428 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2215,6 +2194,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2237,7 +2217,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2249,23 +2229,47 @@
 			};
 			name = Release;
 		};
+		EAED05F5AC70D2877C15D26993320240 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF08FC1C5A26F3A0F9D8600E5A65929E /* FlickrKit.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/FlickrKit/FlickrKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = FlickrKit;
+				PRODUCT_NAME = FlickrKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+		47CF49AD88D370BCA37244889E8E1473 /* Build configuration list for PBXNativeTarget "Pods-JodelChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				196DFA3E4A09A28224918543529A1885 /* Debug */,
-				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
+				C71E3D3229C01307C8A0C96D4B888772 /* Debug */,
+				52A441198509780564DFC34EE08B4B23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A8AD5A3D57D2D3C08ED3AB5AB1F0CF3B /* Build configuration list for PBXNativeTarget "Pods-JodelChallenge" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72239EB3B87F89159CF6905BCC7D6084 /* Debug */,
-				29C06B1BE263BA1B6DA42C9CE2F5CD3E /* Release */,
+				0082FC00BCCBFCAA63AA5C98EA587C17 /* Debug */,
+				E5B12AB88A4F6C443C963D290ECB2428 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2273,8 +2277,8 @@
 		A976983CBF44E9FF2C895434EB6C01CA /* Build configuration list for PBXNativeTarget "FlickrKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				500DFFE74C21B3286600581EAC74E7C4 /* Debug */,
-				9483BCF07B50F5CF8553D7F6B523D637 /* Release */,
+				EAED05F5AC70D2877C15D26993320240 /* Debug */,
+				E20F5F94004DBC718124E0C194858191 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
