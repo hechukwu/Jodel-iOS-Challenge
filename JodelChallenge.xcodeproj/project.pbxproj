@@ -15,6 +15,8 @@
 		3FBCC74C1F73AE9200D35147 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FBCC74B1F73AE9200D35147 /* Assets.xcassets */; };
 		3FBCC74F1F73AE9200D35147 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FBCC74D1F73AE9200D35147 /* LaunchScreen.storyboard */; };
 		3FBCC75A1F73AE9200D35147 /* JodelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC7591F73AE9200D35147 /* JodelChallengeTests.swift */; };
+		472AD682260D3F2B004A8371 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472AD681260D3F2B004A8371 /* BaseViewController.swift */; };
+		472AD689260D401F004A8371 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472AD688260D401F004A8371 /* FeedViewModel.swift */; };
 		E3F2831F9F2C8EF141DFDAF9 /* libPods-JodelChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 310774A51D73A513D7854CD7 /* libPods-JodelChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		3FBCC7551F73AE9200D35147 /* JodelChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JodelChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBCC7591F73AE9200D35147 /* JodelChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JodelChallengeTests.swift; sourceTree = "<group>"; };
 		3FBCC75B1F73AE9200D35147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		472AD681260D3F2B004A8371 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		472AD688260D401F004A8371 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		725C4F04B15E5272D8D1E3A0 /* Pods-JodelChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JodelChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JodelChallenge/Pods-JodelChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		A7096B2AF22017DBA2B785C4 /* Pods-JodelChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JodelChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-JodelChallenge/Pods-JodelChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,13 +71,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A3FEA1122C4DF2C0007A257 /* Screens */ = {
+		0A3FEA1122C4DF2C0007A257 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				0A0367FA22C4E2BE0041C31E /* FeedViewController.swift */,
-				0A0367FC22C4E5DC0041C31E /* FeedCell.swift */,
+				472AD67F260D3F0B004A8371 /* Other */,
+				472AD67E260D3EFB004A8371 /* Base */,
 			);
-			path = Screens;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		1E27EA24C815FAE48893FF55 /* Pods */ = {
@@ -117,12 +121,9 @@
 		3FBCC7431F73AE9200D35147 /* JodelChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				0A3FEA1122C4DF2C0007A257 /* Screens */,
-				3F89F9C91F73AF8A002A3FCB /* NetworkAPI */,
-				3FBCC7441F73AE9200D35147 /* AppDelegate.swift */,
+				472AD679260D3E72004A8371 /* Source */,
+				472AD676260D3DD5004A8371 /* Application */,
 				3FBCC7481F73AE9200D35147 /* Main.storyboard */,
-				3FBCC74B1F73AE9200D35147 /* Assets.xcassets */,
-				3FBCC74D1F73AE9200D35147 /* LaunchScreen.storyboard */,
 				3FBCC7501F73AE9200D35147 /* Info.plist */,
 				3F89F9CC1F73AFFC002A3FCB /* JodelChallenge-Bridging-Header.h */,
 			);
@@ -136,6 +137,91 @@
 				3FBCC75B1F73AE9200D35147 /* Info.plist */,
 			);
 			path = JodelChallengeTests;
+			sourceTree = "<group>";
+		};
+		472AD676260D3DD5004A8371 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3FBCC74D1F73AE9200D35147 /* LaunchScreen.storyboard */,
+				3FBCC74B1F73AE9200D35147 /* Assets.xcassets */,
+				3FBCC7441F73AE9200D35147 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		472AD679260D3E72004A8371 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				472AD67C260D3E9D004A8371 /* Data */,
+				472AD67B260D3E96004A8371 /* Core */,
+				472AD67A260D3E8F004A8371 /* App */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		472AD67A260D3E8F004A8371 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0A3FEA1122C4DF2C0007A257 /* UI */,
+				472AD67D260D3ED3004A8371 /* Utility */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		472AD67B260D3E96004A8371 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				472AD685260D3F77004A8371 /* ViewModel */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		472AD67C260D3E9D004A8371 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3F89F9C91F73AF8A002A3FCB /* NetworkAPI */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		472AD67D260D3ED3004A8371 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		472AD67E260D3EFB004A8371 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				472AD681260D3F2B004A8371 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		472AD67F260D3F0B004A8371 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				472AD680260D3F15004A8371 /* Cell */,
+				0A0367FA22C4E2BE0041C31E /* FeedViewController.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		472AD680260D3F15004A8371 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0A0367FC22C4E5DC0041C31E /* FeedCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		472AD685260D3F77004A8371 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				472AD688260D401F004A8371 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		760BAB3B5631AF7F57670803 /* Frameworks */ = {
@@ -273,7 +359,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472AD682260D3F2B004A8371 /* BaseViewController.swift in Sources */,
 				0A0367FB22C4E2BE0041C31E /* FeedViewController.swift in Sources */,
+				472AD689260D401F004A8371 /* FeedViewModel.swift in Sources */,
 				3FBCC7451F73AE9200D35147 /* AppDelegate.swift in Sources */,
 				3F5224401F73B0C100D7D77A /* FlickrApi.m in Sources */,
 				0A0367FD22C4E5DC0041C31E /* FeedCell.swift in Sources */,
