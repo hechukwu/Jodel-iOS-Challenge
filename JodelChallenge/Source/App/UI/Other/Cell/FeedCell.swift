@@ -2,20 +2,27 @@
 //  FeedCell.swift
 //  JodelChallenge
 //
-//  Created by Dmitry on 27/06/2019.
-//  Copyright © 2019 Jodel. All rights reserved.
+//  Created by Henry Chukwu on 26/03/2021.
+//  Copyright © 2021 Jodel. All rights reserved.
 //
 
 import UIKit
 
-class FeedCell : UICollectionViewCell {
+class FeedCell: UICollectionViewCell, NibLoadable {
     
     @IBOutlet weak var imageView: UIImageView!
-    
+    @IBOutlet weak var imageTitle: UILabel!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        imageView.layer.cornerRadius = 8
+    }
+
     public func configure(with imageUrl : URL) {
         if let data = try? Data(contentsOf: imageUrl) {
             let image = UIImage(data: data)
             imageView.image = image
         }
     }
+
 }
