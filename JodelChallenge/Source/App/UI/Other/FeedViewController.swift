@@ -8,61 +8,57 @@
 
 import UIKit
 
-class FeedViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout {
+class FeedViewController: BaseCollectionViewController {
     
-    private var viewModel: FeedViewModel?
+    // MARK: Public Instance Properties
+
+    private var viewModel: FeedViewModel? { didSet { bindViewModel() } }
 
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshView), for: .valueChanged)
         return refreshControl
     }()
+    
+    var pageNumber = 1
+    var isWating = false
+
+    // MARK: Overridden UIViewController Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        ProgressDialog.show(with: "Fetching photos...")
-        viewModel = FeedViewModel(api: FlickrApi())
-        viewModel?.fetchPhotos(delegate: self)
+        fetchPhotos()
         registerNib()
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let vm = viewModel else { return 0 }
-        return vm.photos.count
-    }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCell.reuseIdentifier, for: indexPath) as? FeedCell, let vm = viewModel else { return UICollectionViewCell() }
-        cell.configure(with: vm.photos[indexPath.row])
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = view.frame.size
-        return CGSize(width: size.width, height: 200)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let vm = viewModel else { return }
-        let photoUrl = vm.photos[indexPath.row]
-        imageTapped(with: photoUrl)
-    }
+    // MARK: Private Instance Methods
 
     private func registerNib() {
         collectionView.register(UINib(nibName: FeedCell.nibName, bundle: nil), forCellWithReuseIdentifier: FeedCell.reuseIdentifier)
     }
 
     private func setupView() {
+        ProgressDialog.show(with: "Fetching photos...")
+        viewModel = FeedViewModel(api: FlickrApi())
         if #available(iOS 10.0, *) {
             collectionView.refreshControl = refreshControl
         } else {
             collectionView.addSubview(refreshControl)
         }
     }
-    
-    @objc private func refreshView() {
-        viewModel?.fetchPhotos(delegate: self)
+
+    @objc  private func refreshView() {
+        // clear the photos array and set pageNumber to 1 to reload view
+        isWating = false
+        pageNumber = 1
+        viewModel?.photos.removeAll()
+        collectionView.reloadData()
+        fetchPhotos()
+    }
+
+    private func fetchPhotos() {
+        viewModel?.fetchPhotos(pageNumber, delegate: self)
     }
     
     func imageTapped(with imageUrl : URL) {
@@ -85,9 +81,50 @@ class FeedViewController: BaseCollectionViewController, UICollectionViewDelegate
     }
 }
 
+// MARK: Collectionview delegates, datasource and flowLayout
+
+extension FeedViewController: UICollectionViewDelegateFlowLayout {
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let vm = viewModel else { return 0 }
+        return vm.photos.count
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCell.reuseIdentifier, for: indexPath) as? FeedCell, let vm = viewModel else { return UICollectionViewCell() }
+        cell.configure(with: vm.photos[indexPath.row])
+        return cell
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let vm = viewModel else { return }
+        if indexPath.row == vm.photos.count - 3 && !isWating {
+            isWating = true
+            pageNumber += 1
+            fetchPhotos()
+        }
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vm = viewModel else { return }
+        let photoUrl = vm.photos[indexPath.row]
+        if let url = photoUrl.getImagePath() {
+            imageTapped(with: url)
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = view.frame.size
+        return CGSize(width: size.width, height: 280)
+    }
+}
+
+// MARK: FeedDelegate
+
 extension FeedViewController: FeedDelegate {
 
     func onFetchPhotos() {
+        isWating = false
         DispatchQueue.main.async(execute: {
             ProgressDialog.hide()
             self.refreshControl.endRefreshing()
@@ -95,7 +132,7 @@ extension FeedViewController: FeedDelegate {
         })
     }
     
-    func onError(message: String) {
+    func onError(_ message: String) {
         DispatchQueue.main.async(execute: {
             ProgressDialog.hide()
             self.refreshControl.endRefreshing()

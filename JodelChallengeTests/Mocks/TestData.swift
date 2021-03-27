@@ -11,13 +11,21 @@ import XCTest
 
 class TestData {
 
-    static let photoUrl: URL? = URL(string: "https://farm66.static.flickr.com/65535/50999206525_8d402b9f27_m.jpg")
+    static let photo: Photo = Photo(id: "23451156376",
+                                    owner: "28017113@N08",
+                                    secret: "8983a8ebc7",
+                                    server: "578",
+                                    farm: 1,
+                                    title: "JodelChallengeTests",
+                                    ispublic: 1,
+                                    isfriend: 0,
+                                    isfamily: 0)
 
-    static var photoUrlArray: [URL] {
-        var urlArr = [URL]()
+    static var photoArray: [Photo] {
+        var photoArr = [Photo]()
         for _ in 1...3 {
-            urlArr.append(photoUrl!)
+            photoArr.append(photo)
         }
-        return urlArr
+        return photoArr
     }
 }

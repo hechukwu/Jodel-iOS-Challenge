@@ -2,24 +2,32 @@ import Foundation
 
 protocol FeedDelegate {
     func onFetchPhotos()
-    func onError(message: String)
+    func onError(_ message: String)
 }
+
 class FeedViewModel {
 
-    var photos : [URL] = []
+    // MARK: Internal Properties
+
+    var photos : [Photo] = []
     var api: FlickrApiProtocol?
 
+    // MARK: class Initializers
+
     init(api: FlickrApiProtocol) {
+        self.photos.removeAll()
         self.api = api
     }
 
-    func fetchPhotos(delegate: FeedDelegate) {
-        api?.fetchPhotos { [weak self] (responsePhotos, error) in
+    // MARK: Internal Methods
+
+    func fetchPhotos(_ page: Int, delegate: FeedDelegate) {
+        api?.fetchPhotos(page) { [weak self] (responsePhotos, error) in
             if let responsePhotos = responsePhotos {
-                self?.photos = responsePhotos
+                self?.photos += responsePhotos
                 delegate.onFetchPhotos()
             } else {
-                delegate.onError(message: error?.localizedDescription ?? "An error occured")
+                delegate.onError(error?.localizedDescription ?? "An error occured")
             }
         }
     }

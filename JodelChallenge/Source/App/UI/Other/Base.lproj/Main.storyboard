@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Item-->
+        <!--Feed-->
         <scene sceneID="vve-ha-RJW">
             <objects>
                 <collectionViewController id="GZw-80-Ba9" customClass="FeedViewController" customModule="JodelChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,11 +45,11 @@
                             <outlet property="delegate" destination="GZw-80-Ba9" id="sDL-yF-Dy1"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="q7C-rv-ccb"/>
+                    <tabBarItem key="tabBarItem" title="Feed" id="q7C-rv-ccb"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rh-DI-kkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="-174"/>
+            <point key="canvasLocation" x="969" y="0.0"/>
         </scene>
     </scenes>
 </document>

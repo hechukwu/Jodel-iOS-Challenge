@@ -28,16 +28,16 @@ class FeedViewModelTests: XCTestCase, FeedDelegate {
     func test_whenInitialized_storesInitParams() throws {
         
         XCTAssertNotNil(viewModel?.photos)
-        XCTAssertEqual(viewModel?.photos, [])
+        XCTAssert(viewModel?.photos.isEmpty == true)
     }
 
     func test_when_fetchPhotos_getsCalled() {
-        viewModel?.fetchPhotos(delegate: self)
+        viewModel?.fetchPhotos(1, delegate: self)
         XCTAssertEqual(viewModel?.photos.count, 3)
-        XCTAssertEqual(viewModel?.photos.first, TestData.photoUrl)
+        XCTAssertEqual(viewModel?.photos.first?.title, "JodelChallengeTests")
     }
 
     func onFetchPhotos() {}
     
-    func onError(message: String) {}
+    func onError(_ message: String) {}
 }

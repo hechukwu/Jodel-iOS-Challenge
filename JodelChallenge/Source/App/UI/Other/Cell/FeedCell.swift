@@ -9,7 +9,7 @@
 import UIKit
 
 class FeedCell: UICollectionViewCell, NibLoadable {
-    
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageTitle: UILabel!
 
@@ -18,8 +18,9 @@ class FeedCell: UICollectionViewCell, NibLoadable {
         imageView.layer.cornerRadius = 8
     }
 
-    public func configure(with imageUrl : URL) {
-        if let data = try? Data(contentsOf: imageUrl) {
+    public func configure(with photo: Photo) {
+        imageTitle.text = photo.title
+        if let imageUrl = photo.getImagePath(), let data = try? Data(contentsOf: imageUrl) {
             let image = UIImage(data: data)
             imageView.image = image
         }

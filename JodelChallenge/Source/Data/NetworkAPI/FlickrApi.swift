@@ -10,31 +10,35 @@ import Foundation
 import UIKit
 import FlickrKit
 
+let fk = FlickrKit.shared()
+
 protocol FlickrApiProtocol {
-    func fetchPhotos(withCompletion completion: @escaping ([URL]?, Error?) -> Void)
+    func fetchPhotos(_ page: Int, withCompletion completion: @escaping ([Photo]?, Error?) -> Void)
 }
 
 class FlickrApi: NSObject, FlickrApiProtocol {
-    func fetchPhotos(withCompletion completion: @escaping ([URL]?, Error?) -> Void) {
-        let fk = FlickrKit.shared()
+    
+    // MARK: Private Instance Property
+    
+    private let interesting = FKFlickrInterestingnessGetList()
 
+    // MARK: class initializer
+
+    override init() {
         fk.initialize(withAPIKey: FLICKR_API_KEY, sharedSecret: FLICKR_SHARED_SECRET)
+        self.interesting.per_page = "10"
+    }
 
-        let interesting = FKFlickrInterestingnessGetList()
-        interesting.per_page = "10"
+    // MARK: Internal method
+
+    func fetchPhotos(_ page: Int, withCompletion completion: @escaping ([Photo]?, Error?) -> Void) {
+
+        interesting.page = "\(page)"
         
         fk.call(interesting) { response, error in
             if let response = response {
-                var photoURLs = [URL]()
-                let topPhotos = response["photos"] as? [AnyHashable: Any]
-                if let value = topPhotos?["photo"] as? [[AnyHashable: Any]] {
-                    for photoData in value {
-                        let url = fk.photoURL(for: .small240, fromPhotoDictionary: photoData)
-                        print("url===\(url)")
-                        photoURLs.append(url)
-                    }
-                    completion(photoURLs, nil)
-                }
+                let flickrResult = JSONDecoder().decode(Photos.self, from: response)
+                completion(flickrResult?.photos.photo, nil)
             } else {
                 completion(nil, error)
             }
