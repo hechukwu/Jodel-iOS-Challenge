@@ -11,6 +11,7 @@ class FeedViewModel {
 
     var photos : [Photo] = []
     var api: FlickrApiProtocol?
+    var totalNumberOfPages: Int?
 
     // MARK: class Initializers
 
@@ -24,7 +25,8 @@ class FeedViewModel {
     func fetchPhotos(_ page: Int, delegate: FeedDelegate) {
         api?.fetchPhotos(page) { [weak self] (responsePhotos, error) in
             if let responsePhotos = responsePhotos {
-                self?.photos += responsePhotos
+                self?.photos += responsePhotos.photo
+                self?.totalNumberOfPages = responsePhotos.pages
                 delegate.onFetchPhotos()
             } else {
                 delegate.onError(error?.localizedDescription ?? "An error occured")

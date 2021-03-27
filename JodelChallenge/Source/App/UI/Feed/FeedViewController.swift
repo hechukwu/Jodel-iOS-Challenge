@@ -71,13 +71,18 @@ class FeedViewController: BaseCollectionViewController {
         newImageView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
         newImageView.addGestureRecognizer(tap)
-        self.view.addSubview(newImageView)
-        self.tabBarController?.tabBar.isHidden = true
+        UIView.animate(withDuration: 1, delay: 1, options: .curveEaseIn) {
+            self.view.addSubview(newImageView)
+            self.tabBarController?.tabBar.isHidden = true
+        }
     }
     
     @objc func dismissFullscreenImage(sender: UITapGestureRecognizer) {
-        self.tabBarController?.tabBar.isHidden = false
-        sender.view?.removeFromSuperview()
+        UIView.animate(withDuration: 1, delay: 1, options: .curveEaseIn, animations: {
+            self.tabBarController?.tabBar.isHidden = false
+        }) { _ in
+            sender.view?.removeFromSuperview()
+        }
     }
 }
 
@@ -99,6 +104,7 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let vm = viewModel else { return }
         if indexPath.row == vm.photos.count - 3 && !isWating {
+            guard pageNumber != vm.totalNumberOfPages else { return }
             isWating = true
             pageNumber += 1
             fetchPhotos()

@@ -10,7 +10,7 @@ import Foundation
 @testable import JodelChallenge
 
 class FlickrApiTests: FlickrApiProtocol {
-    func fetchPhotos(_ page: Int, withCompletion completion: @escaping ([Photo]?, Error?) -> Void) {
-        completion(TestData.photoArray, nil)
+    func fetchPhotos(_ page: Int, withCompletion completion: @escaping (PhotosClass?, Error?) -> Void) {
+        completion(TestData.photoClass, nil)
     }
 }

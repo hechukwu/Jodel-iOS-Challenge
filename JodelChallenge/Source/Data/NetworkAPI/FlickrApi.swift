@@ -13,7 +13,7 @@ import FlickrKit
 let fk = FlickrKit.shared()
 
 protocol FlickrApiProtocol {
-    func fetchPhotos(_ page: Int, withCompletion completion: @escaping ([Photo]?, Error?) -> Void)
+    func fetchPhotos(_ page: Int, withCompletion completion: @escaping (PhotosClass?, Error?) -> Void)
 }
 
 class FlickrApi: NSObject, FlickrApiProtocol {
@@ -31,14 +31,14 @@ class FlickrApi: NSObject, FlickrApiProtocol {
 
     // MARK: Internal method
 
-    func fetchPhotos(_ page: Int, withCompletion completion: @escaping ([Photo]?, Error?) -> Void) {
+    func fetchPhotos(_ page: Int, withCompletion completion: @escaping (PhotosClass?, Error?) -> Void) {
 
         interesting.page = "\(page)"
         
         fk.call(interesting) { response, error in
             if let response = response {
                 let flickrResult = JSONDecoder().decode(Photos.self, from: response)
-                completion(flickrResult?.photos.photo, nil)
+                completion(flickrResult?.photos, nil)
             } else {
                 completion(nil, error)
             }

@@ -11,6 +11,8 @@ import XCTest
 
 class TestData {
 
+    static let photoClass: PhotosClass = PhotosClass(page: 1, pages: 50, perpage: 10, total: 500, photo: photoArray)
+
     static let photo: Photo = Photo(id: "23451156376",
                                     owner: "28017113@N08",
                                     secret: "8983a8ebc7",
