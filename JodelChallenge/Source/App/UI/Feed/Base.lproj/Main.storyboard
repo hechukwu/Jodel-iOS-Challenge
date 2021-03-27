@@ -45,11 +45,14 @@
                             <outlet property="delegate" destination="GZw-80-Ba9" id="sDL-yF-Dy1"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Feed" id="q7C-rv-ccb"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="first" id="q7C-rv-ccb"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rh-DI-kkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="969" y="0.0"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+    </resources>
 </document>

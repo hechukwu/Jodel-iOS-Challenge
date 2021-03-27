@@ -20,9 +20,13 @@ class FeedCell: UICollectionViewCell, NibLoadable {
 
     public func configure(with photo: Photo) {
         imageTitle.text = photo.title
-        if let imageUrl = photo.getImagePath(), let data = try? Data(contentsOf: imageUrl) {
-            let image = UIImage(data: data)
-            imageView.image = image
+        DispatchQueue.global(qos: .background).async {
+            if let imageUrl = photo.getImagePath(), let data = try? Data(contentsOf: imageUrl) {
+                let image = UIImage(data: data)
+                DispatchQueue.main.async(execute: {
+                    self.imageView.image = image
+                })
+            }
         }
     }
 
