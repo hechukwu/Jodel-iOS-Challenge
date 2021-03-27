@@ -96,7 +96,7 @@
 		0A3FEA1122C4DF2C0007A257 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				472AD67F260D3F0B004A8371 /* Other */,
+				472AD67F260D3F0B004A8371 /* Feed */,
 				472AD67E260D3EFB004A8371 /* Base */,
 			);
 			path = UI;
@@ -227,14 +227,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		472AD67F260D3F0B004A8371 /* Other */ = {
+		472AD67F260D3F0B004A8371 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
 				472AD680260D3F15004A8371 /* Cell */,
 				0A0367FA22C4E2BE0041C31E /* FeedViewController.swift */,
 				3FBCC7481F73AE9200D35147 /* Main.storyboard */,
 			);
-			path = Other;
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		472AD680260D3F15004A8371 /* Cell */ = {
@@ -249,7 +249,7 @@
 		472AD685260D3F77004A8371 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				472AD688260D401F004A8371 /* FeedViewModel.swift */,
+				472AD832260F660A004A8371 /* Feed */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -302,6 +302,14 @@
 				472AD819260F5E02004A8371 /* JSONDecoder+Extension.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		472AD832260F660A004A8371 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				472AD688260D401F004A8371 /* FeedViewModel.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		760BAB3B5631AF7F57670803 /* Frameworks */ = {
