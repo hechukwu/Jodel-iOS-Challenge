@@ -61,7 +61,7 @@ class FeedViewController: BaseCollectionViewController {
         viewModel?.fetchPhotos(pageNumber, delegate: self)
     }
     
-    func imageTapped(with imageUrl : URL) {
+    private func imageTapped(with imageUrl : URL) {
         guard let data = try? Data(contentsOf: imageUrl)  else { return }
         let image = UIImage(data: data)
         let newImageView = UIImageView(image: image)
@@ -77,7 +77,7 @@ class FeedViewController: BaseCollectionViewController {
         }
     }
     
-    @objc func dismissFullscreenImage(sender: UITapGestureRecognizer) {
+    @objc private func dismissFullscreenImage(sender: UITapGestureRecognizer) {
         UIView.animate(withDuration: 1, delay: 1, options: .curveEaseIn, animations: {
             self.tabBarController?.tabBar.isHidden = false
         }) { _ in
